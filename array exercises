@@ -1,0 +1,79 @@
+public class random_array {
+
+	public static void main(String[] args) {
+		//////////////////////////////////////////////////////////
+		// declaring array with 20 random numbers from type int //
+		//////////////////////////////////////////////////////////
+		
+		int [] myNum = new int [20];	//set number of values in array
+		
+		//loop over array and fill it with numbers
+		for(int i = 0; i < myNum.length; i++) {		
+			myNum[i] = (int)(Math.random()*100);	//cast into int and set limit to 100
+		}
+		
+		
+		
+		//////////////////////
+		// a) output array //
+		/////////////////////
+		
+		System.out.print("my numbers: ");
+		//for each int element (called i - as in index) in myNum, print out the value of i
+		for (int i : myNum) {
+			  System.out.print(i + " ");	
+		}
+		
+		
+		
+		////////////////////////////////////////////////////////////////////////
+		// b) Determine the smallest value in the array and output this value //
+		////////////////////////////////////////////////////////////////////////
+		
+		int min = myNum[0];
+		
+		for (int j = 1; j < myNum.length; j++) {	//loop over array the get the values in it
+			if (myNum[j] < min) 
+				min = myNum[j];		// if the current value is smaller than the one before, overwrite the old value with the current one
+		}
+		
+		//output the min value
+		System.out.println();	//just to make the output look nicer ;) 
+		System.out.println ("min value: " + min);	
+		
+		
+		
+		//////////////////////////////////////////////////////////
+		// c) Find the largest value in the array and output it //
+		//////////////////////////////////////////////////////////
+		
+		int max = myNum[0];
+		
+		for (int j = 1; j < myNum.length; j++) {	//loop over array the get the values in it
+			if (myNum[j] > max) max = myNum[j];		// if the current value is bigger than the one before, overwrite the old value with the current one
+		}
+		
+		//output the max value
+		System.out.println ("max value: " + max);	
+		
+		
+		
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		// d) Sum up all the values in the array.Output this sum and determine the average of all values in the array //
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		//Sum up all the values in the array
+		int sum = 0;
+		for (int i = 0; i < myNum.length; i++) {
+			sum = myNum[i] + sum;
+		}
+		
+		System.out.println("total: " + sum);
+		
+		//the average of all values in the array
+		int average = sum / myNum.length;
+		System.out.println("average value: " + average);
+		
+	} //end of main
+	
+} //end of class
